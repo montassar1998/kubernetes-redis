@@ -1,0 +1,5 @@
+kubectl create deploy redis --image=redis
+kubectl expose deploy redis --port=6379
+kubect edit deploy/python-server # change to imagePullPolicy: IfNotPresent
+kubectl expose deploy  python-server --port=8080
+kubectl port-forward service/python-server 8080:8080
